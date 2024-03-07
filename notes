@@ -3,3 +3,6 @@ go get github.com/joho/godotenv
 go mod tidy
 
 go mod vendor
+
+go get github.com/go-chi/chi
+go get github.com/go-chi/cors
