@@ -6,3 +6,19 @@ go mod vendor
 
 go get github.com/go-chi/chi
 go get github.com/go-chi/cors
+
+#go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+
+
+go install github.com/pressly/goose/v3/cmd.goose@latest
+
+cd sql/schema
+goose postgres postgres://postgres:@localhost:5432/rssagg up
+
+cd ../..
+sqlc generate
+
+go get github.com/lib/pq
+
+go get github.com/google/uuid
