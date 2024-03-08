@@ -1,6 +1,7 @@
 package main
 
 import (
+	"RSS/internal/auth"
 	"RSS/internal/database"
 	"encoding/json"
 	"fmt"
@@ -31,6 +32,22 @@ func (apiConfig *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Req
 
 	if err != nil {
 		respondWithError(w, 400, fmt.Sprintf("Couldn't create user: %v", err))
+	}
+
+	respondWithJson(w, 201, databaseUserToUser(user))
+}
+
+func (apiCfg *apiConfig) handlerGetUser(w http.ResponseWriter, r *http.Request) {
+	apiKey, err := auth.GetAPIKey(r.Header)
+
+	if err != nil {
+		respondWithError(w, 403, fmt.Sprintf("Auth error: %v", err))
+		return
+	}
+	user, err := apiCfg.DB.GetUserByAPIKey(r.Context(), apiKey)
+
+	if err != nil {
+		respondWithError(w, 400, fmt.Sprintf("Couldn't get user: %v", err))
 	}
 
 	respondWithJson(w, 200, databaseUserToUser(user))
