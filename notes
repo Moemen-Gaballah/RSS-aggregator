@@ -22,3 +22,8 @@ sqlc generate
 go get github.com/lib/pq
 
 go get github.com/google/uuid
+
+🔗 These two coding languages duke it out - but who&rsquo;s the winner?
+In a world where the ability to write any code at all is a tremendous advantage,
+ often the biggest problem coders face is knowing which language to start learning,
+  rather than whether to learn one at all.
