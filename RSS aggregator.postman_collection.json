@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "84f9ce98-e2a3-4c13-a0e5-fd9a802a99db",
+		"name": "RSS aggregator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4828884"
+	},
+	"item": [
+		{
+			"name": "healthz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/healthz",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"healthz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Err",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/err",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"err"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Eslam\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v1/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 6080bcbf810752f089ba46d0bd68e9a2d21862da292e3036e26ae5f958135df6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Eslam\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v1/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Feeds",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 6080bcbf810752f089ba46d0bd68e9a2d21862da292e3036e26ae5f958135df6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"feed 02\",\r\n    \"url\": \"http://wagslane.dev/index.xml\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v1/feeds",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"feeds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Feeds",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 6080bcbf810752f089ba46d0bd68e9a2d21862da292e3036e26ae5f958135df6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Eslam\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v1/feeds",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"feeds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Feeds Follow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 6080bcbf810752f089ba46d0bd68e9a2d21862da292e3036e26ae5f958135df6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"feed_id\": \"e884399c-2e9f-467f-b3b2-6fb7f9c7c019\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v1/feed-follows",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"feed-follows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Feeds Follow",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 6080bcbf810752f089ba46d0bd68e9a2d21862da292e3036e26ae5f958135df6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"feed_id\": \"29ff147f-e644-4734-8f20-bda5e5c4084a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v1/feed-follows",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"feed-follows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete feed follows",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 6080bcbf810752f089ba46d0bd68e9a2d21862da292e3036e26ae5f958135df6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/v1/feed-follows/8a05648a-7972-4418-afce-2bca0805d577",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"feed-follows",
+						"8a05648a-7972-4418-afce-2bca0805d577"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 6080bcbf810752f089ba46d0bd68e9a2d21862da292e3036e26ae5f958135df6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v1/posts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
